@@ -1,0 +1,140 @@
+hrishikesh@EPINHYDW115C:/mnt/c$ cd Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash/
+
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ nano employee.txt
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '{print}' employee.txt
+
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '/manager/ {print}' employee.txt
+ajay manager account 45000
+varun manager sales 50000
+amit manager account 47000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '/peon/ {print}' employee.txt
+tarun peon sales 15000
+sunil peon sales 13000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '/director/ {print}' employee.txt
+satvik director purchase 80000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '{print $1,$4}' employee.txt
+ajay 45000
+sunil 25000
+varun 50000
+amit 47000
+tarun 15000
+deepak 23000
+sunil 13000
+satvik 80000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '{print $1,$3}' employee.txt
+ajay account
+sunil account
+varun sales
+amit account
+tarun sales
+deepak sales
+sunil sales
+satvik purchase
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '{print $1,$2}' employee.txt
+ajay manager
+sunil clerk
+varun manager
+amit manager
+tarun peon
+deepak clerk
+sunil peon
+satvik director
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '{print NR, $0}' employee.txt
+1 ajay manager account 45000
+2 sunil clerk account 25000
+3 varun manager sales 50000
+4 amit manager account 47000
+5 tarun peon sales 15000
+6 deepak clerk sales 23000
+7 sunil peon sales 13000
+8 satvik director purchase 80000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk '{print $1,$NF}' employee.txt
+ajay 45000
+sunil 25000
+varun 50000
+amit 47000
+tarun 15000
+deepak 23000
+sunil 13000
+satvik 80000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk 'BEGIN { print "Emp data: "}'
+Emp data:
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk 'BEGIN { print "Emp data: "} {print NR, $1, $NF} END { print completed }'employee.txt
+awk: cmd. line:1: BEGIN { print "Emp data: "} {print NR, $1, $NF} END { print completed }employee.txt
+awk: cmd. line:1:                                                                                ^ syntax error
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk 'BEGIN { print "Emp data: "} {print NR, $1, $NF} END { print completed }' employee.txt
+Emp data:
+1 ajay 45000
+2 sunil 25000
+3 varun 50000
+4 amit 47000
+5 tarun 15000
+6 deepak 23000
+7 sunil 13000
+8 satvik 80000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk 'BEGIN { print "Emp data: "} {print NR, $1, $NF} END { print "completed" }' employee.txt
+Emp data:
+1 ajay 45000
+2 sunil 25000
+3 varun 50000
+4 amit 47000
+5 tarun 15000
+6 deepak 23000
+7 sunil 13000
+8 satvik 80000
+completed
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk 'BEGIN { print "Emp data: "} {print NR, $1, $2, $NF} END { print
+ "completed" }' employee.txt
+Emp data:
+1 ajay manager 45000
+2 sunil clerk 25000
+3 varun manager 50000
+4 amit manager 47000
+5 tarun peon 15000
+6 deepak clerk 23000
+7 sunil peon 13000
+8 satvik director 80000
+completed
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk 'BEGIN {OFS=","} { print }' employee.txt
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000
+
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$ awk 'BEGIN {OFS=","} { print $1, $NF }' employee.txt
+ajay,45000
+sunil,25000
+varun,50000
+amit,47000
+tarun,15000
+deepak,23000
+sunil,13000
+satvik,80000
+hrishikesh@EPINHYDW115C:/mnt/c/Users/hrishikeshsukhdeo_da/Desktop/DevOps_Training/Bash$
