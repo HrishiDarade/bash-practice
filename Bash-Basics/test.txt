@@ -1,0 +1,17 @@
+10_input_output_redirction.sh
+1_echo_command.sh
+2_variable_declaration.sh
+3_variable_interpolation.sh
+4_user_input.sh
+5_variable_reassignment.sh
+6_variable_scope.sh
+7_variable_command.sh
+8_array_declaration.sh
+9_special_variable.sh
+combined.log
+combined_append.log
+error.log
+error_append.log
+new.txt
+test.txt
+test_append.txt
