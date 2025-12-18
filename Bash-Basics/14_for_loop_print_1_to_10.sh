@@ -14,3 +14,11 @@ do
     echo -n "$i "
 done
 echo
+
+
+echo "Using seq command in the for loop"
+
+for i in $(seq 1 2 10)              #start at 1, increment by 2 and end at 10
+do 
+    echo $i
+done
